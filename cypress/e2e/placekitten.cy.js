@@ -57,7 +57,7 @@ describe('Placekitten', () => {
         expect(response.status).to.eq(200);
         expect(response.headers).to.exist;
         expect(response.headers).to.have.property("content-type").that.contains("image/jpeg");
-      }) // erro na resposta da API do website, não posso corrigir e não sei contornar este erro.
+      }) // error in the response of the website API, I can not fix and do not know how to work around this error.
     })
 
     it("Second link", () => {
@@ -65,7 +65,7 @@ describe('Placekitten', () => {
         expect(response.status).to.eq(200)
         expect(response.headers).to.exist
         expect(response.headers).to.have.property("content-type").that.contains("image/jpeg")
-      })
+      }) // apparently the same error as the previous one.
     })
   })
 })
