@@ -33,7 +33,7 @@ describe('Placekitten', () => {
       }
     })
 
-    it.only('Check footer', () => {
+    it('Check footer', () => {
       cy.get('#footer > p')
         .find('a')
         .should(($links) => {
@@ -46,6 +46,26 @@ describe('Placekitten', () => {
           });
         });
 
+    })
+  })
+
+  context('Links on the homepage', () => {
+    it('First link', () => {
+      cy.getKitten().as("kitten");
+
+      cy.get("@kitten").then((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.headers).to.exist;
+        expect(response.headers).to.have.property("content-type").that.contains("image/jpeg");
+      }) // erro na resposta da API do website, não posso corrigir e não sei contornar este erro.
+    })
+
+    it("Second link", () => {
+      cy.request("https://placekitten.com/g/200/300").then((response) => {
+        expect(response.status).to.eq(200)
+        expect(response.headers).to.exist
+        expect(response.headers).to.have.property("content-type").that.contains("image/jpeg")
+      })
     })
   })
 })

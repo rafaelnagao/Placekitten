@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/rafaelnagao/Placekitten#readme",
   "devDependencies": {
-    "cypress": "^12.9.0"
+    "cypress": "^12.10.0"
   }
 }
