@@ -4,9 +4,8 @@
   "description": "Training test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "Running build... ",
-    "deploy": "Running deploy... "
+    "cy:open": "cypress open",
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",

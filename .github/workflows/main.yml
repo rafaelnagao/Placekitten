@@ -1,19 +1,14 @@
 
   name: Placekitten test
 
-  on:
-    push:
-        branches: ["*"]
-
-jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-            with:
-                node-version: 16
-            - run: npm ci
-            - run: npm run test
-            - run: npm run build
-            - run: npm run deploy
+  on: push
+  jobs:
+    cypress-run:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+        # Install NPM dependencies, cache them correctly
+        # and run all Cypress tests
+        - name: Cypress run
+          uses: cypress-io/github-action@v5
