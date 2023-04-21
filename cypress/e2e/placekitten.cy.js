@@ -49,23 +49,23 @@ describe('Placekitten', () => {
     })
   })
 
-  // context('Links on the homepage', () => {
-  //   it('First link', () => {
-  //     cy.getKitten().as("kitten");
+  context.skip('Links on the homepage', () => {
+    it('First link', () => {
+      cy.getKitten().as("kitten");
 
-  //     cy.get("@kitten").then((response) => {
-  //       expect(response.status).to.eq(200);
-  //       expect(response.headers).to.exist;
-  //       expect(response.headers).to.have.property("content-type").that.contains("image/jpeg");
-  //     }) // error in the response of the website API, I can not fix and do not know how to work around this error.
-  //   })
+      cy.get("@kitten").then((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.headers).to.exist;
+        expect(response.headers).to.have.property("content-type").that.contains("image/jpeg");
+      }) // error in the response of the website API, I can not fix and do not know how to work around this error.
+    })
 
-  //   it("Second link", () => {
-  //     cy.request("https://placekitten.com/g/200/300").then((response) => {
-  //       expect(response.status).to.eq(200)
-  //       expect(response.headers).to.exist
-  //       expect(response.headers).to.have.property("content-type").that.contains("image/jpeg")
-  //     }) // apparently the same error as the previous one.
-  //   })
-  // })
+    it("Second link", () => {
+      cy.request("https://placekitten.com/g/200/300").then((response) => {
+        expect(response.status).to.eq(200)
+        expect(response.headers).to.exist
+        expect(response.headers).to.have.property("content-type").that.contains("image/jpeg")
+      }) // apparently the same error as the previous one.
+    })
+  })
 })
